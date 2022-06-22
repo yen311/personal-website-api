@@ -26,10 +26,12 @@ SECRET_KEY = 'django-insecure-9+fwbgsm2t(xa@*!20l2m=o0nv06z^$4i4#0!p@(b^rsqhs(g&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-storeapp-api.azurewebsites.net"]
+ALLOWED_HOSTS = ["django-storeapp-api.azurewebsites.net", "127.0.0.1"]
+
+CSRF_TRUSTED_ORIGINS=['https://django-storeapp-api.azurewebsites.net']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "http://localhost:3000",
 ]
 
 
@@ -152,6 +154,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = 'api/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
