@@ -1,0 +1,26 @@
+# https://www.saltycrane.com/blog/2019/01/how-run-postgresql-docker-mac-local-development/
+# https://kb.objectrocket.com/redis/run-redis-with-docker-compose-1055
+version: "3"
+services:
+  db:
+    image: "postgres:14"
+    container_name: "${APPNAME}_database"
+    environment:
+      POSTGRES_PASSWORD: "${DB_ADMINPASSWORD}"
+    ports:
+      - "54321:5432"
+    volumes:
+      - my_dbdata:${ROOT}/persistent/pgdata
+  redis:
+    image: "redis:alpine"
+    container_name: "${APPNAME}_redis"
+    command: "redis-server --requirepass ${REDIS_PASSWORD}"
+    environment:
+      REDIS_REPLICATION_MODE: "master"
+    ports:
+      - "63791:6379"
+    volumes:
+      - ${ROOT}/persistent/redis-data:/var/lib/redis
+      - ${ROOT}/persistent/redis.conf:/usr/local/etc/redis/redis.conf
+volumes:
+  my_dbdata:

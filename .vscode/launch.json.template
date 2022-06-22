@@ -1,0 +1,60 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Backend: API",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "env": {
+                "APPNAME": "$APPNAME",
+                "DB_NAME": "$DB_NAME",
+                "DB_HOST": "localhost",
+                "DB_PORT": "54321",
+                "DB_USER": "$DB_USER",
+                "DB_PASSWORD": "$DB_PASSWORD",
+                "REDIS_HOST": "localhost",
+                "REDIS_USER": "$REDIS_USER",
+                "REDIS_PORT": "63791",
+                "REDIS_PASSWORD": "$REDIS_PASSWORD"
+            }
+        },
+        {
+            "name": "Celery Worker",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/",
+            "program": "/Users/kuoyen/demseismic.nimbus39/bin/celery",
+            "args": [
+                "-A",
+                "demseismic.tasks",
+                "worker",
+                "-l",
+                "INFO",
+                "--pool",
+                "solo",
+                "--purge"
+            ],
+            "django": true,
+            "env": {
+                "APPNAME": "$APPNAME",
+                "DB_NAME": "$DB_NAME",
+                "DB_HOST": "localhost",
+                "DB_PORT": "54321",
+                "DB_USER": "$DB_USER",
+                "DB_PASSWORD": "$DB_PASSWORD",
+                "REDIS_HOST": "localhost",
+                "REDIS_USER": "$REDIS_USER",
+                "REDIS_PORT": "63791",
+                "REDIS_PASSWORD": "$REDIS_PASSWORD"
+            }
+        },        
+    ]
+}
