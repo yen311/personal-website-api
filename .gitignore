@@ -6,3 +6,4 @@
 .vscode/settings.json
 
 .pgpass
+docker-compose.yml
