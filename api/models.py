@@ -18,5 +18,8 @@ class Product(models.Model):
         decimal_places = 2
     )
 
+    quantity = models.IntegerField(
+    )
+
     def __str__(self):
         return f"{self.name}"

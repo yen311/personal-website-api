@@ -28,10 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*", "django-storeapp-api.azurewebsites.net", "storeapp-api.herokuapp.com"]
 
-CSRF_TRUSTED_ORIGINS=['https://django-storeapp-api.azurewebsites.net', "https://storeapp-api.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS=['https://django-storeapp-api.azurewebsites.net', "https://storeapp-api.herokuapp.com", "https://storeapp-react.herokuapp.com"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://storeapp-react.herokuapp.com"
 ]
 
 
