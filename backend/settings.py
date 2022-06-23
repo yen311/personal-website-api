@@ -84,23 +84,23 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": os.environ.get("DB_NAME"),
-#         "HOST": os.environ.get("DB_HOST"),
-#         "USER": os.environ.get("DB_USER"),
-#         "PASSWORD": os.environ.get("DB_PASSWORD"),
-#         "PORT": os.environ.get("DB_PORT",5432),
-#     }
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": 'dadhl9um9rlh22',
+        "HOST": "ec2-23-23-182-238.compute-1.amazonaws.com",
+        "USER": "tnhbvxxoyssaxh",
+        "PASSWORD": "30caa7579a228afab42bf03782c4f1094391954bc4bfe77f630c4672e38141bd",
+        "PORT": 5432,
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'mydatabase',
+#     }
+# }
 
 REDIS = {
     "default": {
