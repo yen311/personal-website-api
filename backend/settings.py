@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-9+fwbgsm2t(xa@*!20l2m=o0nv06z^$4i4#0!p@(b^rsqhs(g&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "django-storeapp-api.azurewebsites.net", "storeapp-api.herokuapp.com"]
 
-CSRF_TRUSTED_ORIGINS=['https://django-storeapp-api.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS=['https://django-storeapp-api.azurewebsites.net', "https://storeapp-api.herokuapp.com"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
