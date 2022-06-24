@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9+fwbgsm2t(xa@*!20l2m=o0nv06z^$4i4#0!p@(b^rsqhs(g&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", "django-storeapp-api.azurewebsites.net", "storeapp-api.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS=['https://django-storeapp-api.azurewebsites.net', "https://storeapp-api.herokuapp.com", "https://storeapp-react.herokuapp.com"]
 
@@ -96,13 +96,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'mydatabase',
-#     }
-# }
-
 REDIS = {
     "default": {
         "LOCATION": f"redis://{os.environ.get('REDIS_HOST')}:{os.environ.get('REDIS_PORT')}/1",
@@ -157,6 +150,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = 'api/static/'
+
+MEDIA_URL = ''
+
+MEDIA_ROOT = ''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -11,14 +11,21 @@ class Product(models.Model):
         unique=True, 
         verbose_name="Product Name", 
         help_text="The name of the product"
-    )
-    #code 
+    ) 
     price = models.DecimalField(
         max_digits = 20,
-        decimal_places = 2
+        decimal_places = 2,
+        default=None, 
+        blank=True, 
     )
-
     quantity = models.IntegerField(
+        default=None, 
+        blank=True, 
+        null=True,
+    )
+    images = models.ImageField(
+        upload_to="files/images/product",
+        null=True,
     )
 
     def __str__(self):
