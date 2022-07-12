@@ -1,33 +1,29 @@
 from django.db import models
-
+from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 
 class Education(models.Model):
     name = models.CharField(
-        max_length=50, 
+        max_length=255, 
         default=None, 
         blank=True, 
     ) 
     city = models.CharField(
-        max_length=50, 
+        max_length=255, 
         default=None, 
         blank=True, 
     ) 
     country = models.CharField(
-        max_length=50, 
+        max_length=255, 
         default=None, 
         blank=True, 
     )
     major = models.CharField(
-        max_length=50, 
+        max_length=255, 
         default=None, 
         blank=True, 
     ) 
-    description = models.TextField(
-        max_length=50, 
-        default=None, 
-        blank=True, 
-    ) 
+    descriptions = ArrayField(models.CharField(max_length=255), blank=True, null=True, default=None)
     startDate = models.DateField()
     endDate = models.DateField()
 
