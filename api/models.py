@@ -2,31 +2,34 @@ from django.db import models
 
 # Create your models here.
 
-class Product(models.Model):
-
+class Education(models.Model):
     name = models.CharField(
         max_length=50, 
         default=None, 
         blank=True, 
-        unique=True, 
-        verbose_name="Product Name", 
-        help_text="The name of the product"
     ) 
-    price = models.DecimalField(
-        max_digits = 20,
-        decimal_places = 2,
+    city = models.CharField(
+        max_length=50, 
+        default=None, 
+        blank=True, 
+    ) 
+    country = models.CharField(
+        max_length=50, 
         default=None, 
         blank=True, 
     )
-    quantity = models.IntegerField(
+    major = models.CharField(
+        max_length=50, 
         default=None, 
         blank=True, 
-        null=True,
-    )
-    images = models.ImageField(
-        upload_to="files/images/product",
-        null=True,
-    )
+    ) 
+    description = models.TextField(
+        max_length=50, 
+        default=None, 
+        blank=True, 
+    ) 
+    startDate = models.DateField()
+    endDate = models.DateField()
 
     def __str__(self):
         return f"{self.name}"
