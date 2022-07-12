@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'yen-website-api.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS=["https://yen311.github.io/personal-website"]
+CSRF_TRUSTED_ORIGINS=["https://yen311.github.io/personal-website", "http://localhost:3000"]
 
 CORS_ALLOWED_ORIGINS = [
 
