@@ -28,11 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS=['https://django-storeapp-api.azurewebsites.net', "https://storeapp-api.herokuapp.com", "https://storeapp-react.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS=[]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://storeapp-react.herokuapp.com"
+
 ]
 
 
@@ -88,10 +87,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'dadhl9um9rlh22',
-        "HOST": "ec2-23-23-182-238.compute-1.amazonaws.com",
-        "USER": "tnhbvxxoyssaxh",
-        "PASSWORD": "30caa7579a228afab42bf03782c4f1094391954bc4bfe77f630c4672e38141bd",
+        "NAME": 'd54751gjkqbpmp',
+        "HOST": "ec2-3-222-74-92.compute-1.amazonaws.com",
+        "USER": "jofzskulknwoca",
+        "PASSWORD": "57e0719b9f252455b17e8c116e65c397e97ce1d5e409c2c047a175bc84aa095b",
         "PORT": 5432,
     }
 }
