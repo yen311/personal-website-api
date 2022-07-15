@@ -11,3 +11,8 @@ class EducationAdmin(admin.ModelAdmin):
 @admin.register(WorkExperience)
 class WorkExperienceAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    pass

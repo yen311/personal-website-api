@@ -14,10 +14,15 @@ class ResumeList(APIView):
 
         w = WorkExperience.objects.all().order_by("-startDate")
         workExperience = serializers.WorkExperienceSerializer(w, many=True);
+
+        p = Project.objects.all().order_by("-date")
+        projects = serializers.ProjectSerializer(p, many=True);
+        
         return Response(           
             {
                 "educations":  educations.data,
-                "workExperience": workExperience.data
+                "workExperience": workExperience.data,
+                "projects": projects.data,
             },
             status=status.HTTP_200_OK,
         )

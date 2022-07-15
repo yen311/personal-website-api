@@ -11,3 +11,9 @@ class WorkExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkExperience
         fields = "__all__"
+
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = "__all__"
