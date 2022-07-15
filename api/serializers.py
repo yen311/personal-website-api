@@ -5,3 +5,9 @@ class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Education
         fields = "__all__"
+
+
+class WorkExperienceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WorkExperience
+        fields = "__all__"

@@ -6,3 +6,8 @@ from api.models import *
 @admin.register(Education)
 class EducationAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(WorkExperience)
+class WorkExperienceAdmin(admin.ModelAdmin):
+    pass

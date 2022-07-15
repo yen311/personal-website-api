@@ -8,12 +8,17 @@ from rest_framework import status
 
 class ResumeList(APIView):
 
-    def get(self, request, format=None):
-        educations = Education.objects.all()
-        s = serializers.EducationSerializer(educations, many=True);
+    def get(self, request):
+        e = Education.objects.all().order_by("-startDate")
+        educations = serializers.EducationSerializer(e, many=True);
+
+        w = WorkExperience.objects.all().order_by("-startDate")
+        workExperience = serializers.WorkExperienceSerializer(w, many=True);
         return Response(           
             {
-                "educations":  s.data
+                "educations":  educations.data,
+                "workExperience": workExperience.data
             },
             status=status.HTTP_200_OK,
         )
+
