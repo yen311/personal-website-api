@@ -100,8 +100,8 @@ class Skill(models.Model):
         blank=True, 
         null=True
     ) 
-    type = models.CharField(max_length=1, choices=TYPE_CHOICES, default="Software")
-    type = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)],  default=None,  blank=True, 
+    type = models.CharField(max_length=255, choices=TYPE_CHOICES, default="Software")
+    percentage = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)],  default=None,  blank=True, 
         null=True)
 
     
