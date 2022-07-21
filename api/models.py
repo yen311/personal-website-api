@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.core.validators import MaxValueValidator, MinValueValidator 
 # Create your models here.
 
 class Education(models.Model):
@@ -83,3 +84,24 @@ class Project(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class Skill(models.Model):
+    TYPE_CHOICES = (
+        ('Software', 'Software'),
+        ('Data', 'Data'),
+        ('Tool', 'Tool'),
+        ('SoftSkill', 'SoftSkill'),
+    )
+
+    name = models.CharField(
+        max_length=255, 
+        default=None, 
+        blank=True, 
+        null=True
+    ) 
+    type = models.CharField(max_length=1, choices=TYPE_CHOICES, default="Software")
+    type = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)],  default=None,  blank=True, 
+        null=True)
+
+    

@@ -1,3 +1,4 @@
+from re import S
 from api import serializers
 from api.models import *
 from rest_framework.views import APIView
@@ -26,4 +27,17 @@ class ResumeList(APIView):
             },
             status=status.HTTP_200_OK,
         )
+
+class SkillList(APIView):
+    def get(self, request):
+        s = Skill.objects.all().order_by("type")
+        skills = serializers.SkillSerializer(s, many=True);
+        
+        return Response(           
+            {
+                "skills":  skills.data,
+            },
+            status=status.HTTP_200_OK,
+        )
+
 

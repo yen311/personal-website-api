@@ -4,4 +4,6 @@ from . import views
 
 urlpatterns = [
      path("resume/", views.ResumeList.as_view()),
+     path("skill/", views.SkillList.as_view()),
+     
 ]

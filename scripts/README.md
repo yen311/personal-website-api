@@ -3,7 +3,7 @@
 The first thing is to tell the environment what the base directory is
 
 ```
-# export ROOT=~/git/storeapp
+# export ROOT=~/git/storeapp/backend
 ```
 
 The environment variable source file ~/scripts/env*setup.sh contains default values and at the end it
