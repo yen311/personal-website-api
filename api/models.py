@@ -104,4 +104,6 @@ class Skill(models.Model):
     percentage = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)],  default=None,  blank=True, 
         null=True)
 
+    def __str__(self):
+        return f"{self.name}"
     
