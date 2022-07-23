@@ -1,4 +1,4 @@
-from re import S
+import json
 from api import serializers
 from api.models import *
 from rest_framework.views import APIView
@@ -29,10 +29,24 @@ class ResumeList(APIView):
         )
 
 class SkillList(APIView):
-    def get(self, request):
-        s = Skill.objects.all().order_by("type")
+    def post(self, request):
+    
+        data = json.loads(request.body)
+        type = data['type']
+      
+        if type == "Software":
+            s = Skill.objects.filter(type="Software").order_by("type")
+        elif type == "Data":
+            s = Skill.objects.filter(type="Data").order_by("type")
+        elif type == "Tool":
+            s = Skill.objects.filter(type="Tool").order_by("type")
+        elif type == "SoftSkill":
+            s = Skill.objects.filter(type="SoftSkill").order_by("type")
+        else:
+            s = Skill.objects.all().order_by("type")
+
         skills = serializers.SkillSerializer(s, many=True);
-        
+
         return Response(           
             {
                 "skills":  skills.data,
