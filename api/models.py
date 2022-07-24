@@ -120,7 +120,7 @@ class Course(models.Model):
         blank=True, 
         null=True
     ) 
-    urk = models.CharField(
+    url = models.CharField(
         max_length=255, 
         default=None, 
         blank=True, 
