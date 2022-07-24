@@ -45,6 +45,7 @@ class SkillList(APIView):
         else:
             s = Skill.objects.all().order_by("type")
 
+        s = s.order_by("percentage")
         skills = serializers.SkillSerializer(s, many=True);
 
         return Response(           
