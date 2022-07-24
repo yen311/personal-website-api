@@ -35,17 +35,16 @@ class SkillList(APIView):
         type = data['type']
       
         if type == "Software":
-            s = Skill.objects.filter(type="Software").order_by("type")
+            s = Skill.objects.filter(type="Software").order_by("type", "-percentage")
         elif type == "Data":
-            s = Skill.objects.filter(type="Data").order_by("type")
+            s = Skill.objects.filter(type="Data").order_by("type", "-percentage")
         elif type == "Tool":
-            s = Skill.objects.filter(type="Tool").order_by("type")
+            s = Skill.objects.filter(type="Tool").order_by("type", "-percentage")
         elif type == "SoftSkill":
-            s = Skill.objects.filter(type="SoftSkill").order_by("type")
+            s = Skill.objects.filter(type="SoftSkill").order_by("type", "-percentage")
         else:
-            s = Skill.objects.all().order_by("type")
+            s = Skill.objects.all().order_by("type", "-percentage")
 
-        s = s.order_by("percentage")
         skills = serializers.SkillSerializer(s, many=True);
 
         return Response(           
