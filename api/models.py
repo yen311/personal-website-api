@@ -107,3 +107,25 @@ class Skill(models.Model):
     def __str__(self):
         return f"{self.name}"
     
+class Course(models.Model):
+    name = models.CharField(
+        max_length=255, 
+        default=None, 
+        blank=True, 
+        null=True
+    ) 
+    code = models.CharField(
+        max_length=255, 
+        default=None, 
+        blank=True, 
+        null=True
+    ) 
+    urk = models.CharField(
+        max_length=255, 
+        default=None, 
+        blank=True, 
+        null=True
+    ) 
+
+    def __str__(self):
+        return f"{self.name}"

@@ -18,6 +18,12 @@ class ProjectAdmin(admin.ModelAdmin):
     pass
 
 
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    pass
+
+
+
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
     pass

@@ -55,3 +55,14 @@ class SkillList(APIView):
         )
 
 
+class CourseList(APIView):
+    def get(self, request):
+        c = Course.objects.all().order_by("code")
+        courses = serializers.CourseSerializer(c, many=True);
+        
+        return Response(           
+            {
+                "courses":  courses.data,
+            },
+            status=status.HTTP_200_OK,
+        )
