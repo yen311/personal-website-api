@@ -66,3 +66,17 @@ class CourseList(APIView):
             },
             status=status.HTTP_200_OK,
         )
+
+
+
+class ProjectList(APIView):
+    def get(self, request):
+        p = Project.objects.all().order_by("-date")
+        projects = serializers.ProjectSerializer(p, many=True);
+        
+        return Response(           
+            {
+                "projects": projects.data,
+            },
+            status=status.HTTP_200_OK,
+        )
