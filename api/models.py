@@ -79,6 +79,11 @@ class Project(models.Model):
         default=None,
         blank=True,
     )
+    dropdownName = models.CharField(
+        max_length=255,
+        default=None,
+        blank=True,
+    )
     descriptions = ArrayField(
         models.CharField(max_length=255),
         blank=True,
@@ -103,7 +108,13 @@ class Project(models.Model):
         blank=True,
         null=True,
     )
-    routingUrl = models.CharField(
+    path = models.CharField(
+        max_length=255,
+        default=None,
+        blank=True,
+        null=True,
+    )
+    url = models.CharField(
         max_length=255,
         default=None,
         blank=True,
