@@ -83,6 +83,7 @@ class Project(models.Model):
         max_length=255,
         default=None,
         blank=True,
+        null=True,
     )
     descriptions = ArrayField(
         models.CharField(max_length=255),
