@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from django.core.validators import MaxValueValidator, MinValueValidator
+import os
+from api.storage import OverwriteStorage
 
 # Create your models here.
 
@@ -73,6 +75,10 @@ class WorkExperience(models.Model):
         return f"{self.position} at {self.company}"
 
 
+def image_path(instance, filename):
+    return os.path.join("uploads", str(instance.id), filename)
+
+
 class Project(models.Model):
     name = models.CharField(
         max_length=255,
@@ -122,7 +128,8 @@ class Project(models.Model):
         null=True,
     )
     img = models.ImageField(
-        upload_to="uploads/",
+        storage=OverwriteStorage(),
+        upload_to=image_path,
         default=None,
         blank=True,
         null=True,
