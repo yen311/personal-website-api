@@ -8,3 +8,5 @@ Pipfile
 
 .pgpass
 docker-compose.yml
+
+.env

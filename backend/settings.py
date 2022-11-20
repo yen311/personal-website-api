@@ -91,23 +91,14 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "d54751gjkqbpmp",
-        "HOST": "ec2-3-222-74-92.compute-1.amazonaws.com",
-        "USER": "jofzskulknwoca",
-        "PASSWORD": "57e0719b9f252455b17e8c116e65c397e97ce1d5e409c2c047a175bc84aa095b",
+        "NAME": "lwiramga",
+        "HOST": "rosie.db.elephantsql.com",
+        "USER": "lwiramga",
+        "PASSWORD": "45mq2ER8-aN3GX9odG-BtVqRGuJbx5pm",
         "PORT": 5432,
     }
 }
 
-REDIS = {
-    "default": {
-        "LOCATION": f"redis://{os.environ.get('REDIS_HOST')}:{os.environ.get('REDIS_PORT')}/1",
-        "HOST": os.environ.get("REDIS_HOST"),
-        "USER": os.environ.get("REDIS_USER"),
-        "PASSWORD": os.environ.get("REDIS_PASSWORD"),
-        "PORT": os.environ.get("REDIS_PORT", 6379),
-    }
-}
 
 
 # Password validation
