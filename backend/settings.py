@@ -32,7 +32,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "https://yen311.github.io",
     "https://yen-website-api.herokuapp.com",
-    "rosie.db.elephantsql.com"
+    "https://rosie.db.elephantsql.com"
 ]
 
 # Application definition
