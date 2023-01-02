@@ -23,10 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "127.0.0.1", 
-    "yen-website-api.herokuapp.com", 
-    "localhost",
-    "rosie.db.elephantsql.com",
+    "*"
+    # "127.0.0.1", 
+    # "yen-website-api.herokuapp.com", 
+    # "localhost",
+    # "rosie.db.elephantsql.com",
 ]
 
 
