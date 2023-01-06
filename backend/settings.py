@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-9+fwbgsm2t(xa@*!20l2m=o0nv06z^$4i4#0!p@(b^rsqhs(g&
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "yen-website-api.herokuapp.com"
+    "yenpersonalwebsite.azurewebsites.net"
 ]
 
 
