@@ -36,6 +36,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://yenpersonalwebsite.azurewebsites.net",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+     "https://yenpersonalwebsite.azurewebsites.net",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
