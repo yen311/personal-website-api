@@ -24,21 +24,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "*"
-    # "127.0.0.1", 
-    # "yen-website-api.herokuapp.com", 
-    # "localhost",
-    # "rosie.db.elephantsql.com",
 ]
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:7000",
-    "http://localhost:3000",
-    "http://127.0.0.1:7000",
-    "http://127.0.0.1:3000",
-    "https://yen311.github.io",
-    "https://yen-website-api.herokuapp.com",
-    "https://rosie.db.elephantsql.com"
+    "*"
 ]
 
 # Application definition
